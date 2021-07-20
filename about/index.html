@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>about | liao</title>
+  <title>关于 | liao</title>
 
   
     
@@ -75,6 +75,29 @@
   <body>
     <!-- 预加载动画 -->
     <!-- 页面预加载动画 -->
+
+<div id='loader'>
+  <link rel="stylesheet" href="/js/loaded/index.css" >
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="configure-border-1">
+      <div class="configure-core"></div>
+    </div>
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div>
+    <div class="loading-word">加载中...</div>
+  </div>
+</div>
+
+<script>
+  var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load',endLoading);
+</script>
 
     
     <!-- 判断是否为暗黑风格 -->
@@ -429,13 +452,13 @@
         <h2>
           <span>
             <i class="fa fa-search" aria-hidden="true"></i>
-            <span class="title">搜索文章</span>
+            <span class="title">本地搜索</span>
           </span>
           <i class="fa fa-close close" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
         </h2>
         <form class="site-search-form">
           <input type="text"
-            placeholder="Please enter keywords"
+            placeholder="请输入关键字"
             id="local-search-input" 
             @click="getSearchFile()"
             class="st-search-input"
@@ -589,12 +612,12 @@
 
 <div id="about" class="container">
 	<div class="title">
-		<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;about
+		<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;关于
 	</div>
 	
 	<div class="basic-info" data-aos="fade-up">
 		<div class="subtitle">
-			<i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;BasicInfo
+			<i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;基本信息
 		</div>
 		<div class="items">
 			<div class="item">
@@ -602,7 +625,7 @@
 					<i class="fa fa-heart" aria-hidden="true"></i>
 				</div>
 				<div class="text">
-					age：17
+					年龄：17
 				</div>
 			</div>
 
@@ -611,7 +634,7 @@
 					<i class="fa fa-transgender" aria-hidden="true"></i>
 				</div>
 				<div class="text">
-					sex：男
+					性别：男
 				</div>
 			</div>
 
@@ -620,7 +643,7 @@
 					<i class="fa fa-map-marker" aria-hidden="true"></i>
 				</div>
 				<div class="text">
-					coordinate：火星
+					坐标：火星
 				</div>
 			</div>
 
@@ -629,7 +652,7 @@
 					<i class="fa fa-external-link-square" aria-hidden="true"></i>
 				</div>
 				<div class="text">
-					status：划水中
+					状态：划水中
 				</div>
 			</div>
 		</div>
@@ -638,7 +661,7 @@
 	
 	<div class="basic-info" data-aos="fade-up">
 		<div class="subtitle">
-			<i class="fa fa-bicycle" aria-hidden="true"></i>&nbsp;&nbsp;skill
+			<i class="fa fa-bicycle" aria-hidden="true"></i>&nbsp;&nbsp;技能
 		</div>
 		<div class="skill">
 			
@@ -648,9 +671,17 @@
 	
 	<div class="basic-info" data-aos="fade-up">
 		<div class="subtitle">
-			<i class="fa fa-chain-broken" aria-hidden="true"></i>&nbsp;&nbsp;social accounts
+			<i class="fa fa-chain-broken" aria-hidden="true"></i>&nbsp;&nbsp;社交账号
 		</div>
 		<div class="socialAccounts">
+			
+				<div class="account">
+					<i class="fa fa-qq" aria-hidden="true"></i> QQ：<a href="">2668812066</a> 
+				</div>
+			
+				<div class="account">
+					<i class="fa fa-weixin" aria-hidden="true"></i> 微信：<a href="">LX2668812066</a> 
+				</div>
 			
 		</div>
 	</div>
@@ -658,7 +689,7 @@
 	
 	<div class="basic-info" data-aos="fade-up">
 		<div class="subtitle">
-			<i class="fa fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;game
+			<i class="fa fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;游戏
 		</div>
 		<div class="games">
 			
@@ -668,7 +699,7 @@
 	
 	<div class="basic-info" data-aos="fade-up">
 		<div class="subtitle">
-			<i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;book
+			<i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;书籍
 		</div>
 		<div class="books">
 			
@@ -685,7 +716,7 @@
       
     </div>
     <div class="footer-copyright">
-      <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/yuang01">yuang01</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+      <p>Copyright © 2020 - 2021 <a target="_blank" rel="noopener" href="https://github.com/x-thence">x-thence</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
     </div>
     <div class="footer-custom">
@@ -696,14 +727,14 @@
       
   <!-- 不蒜子统计 -->
   <span id="busuanzi_container_site_pv">
-        <i class="fa fa-book" aria-hidden="true"></i>Total reading：<span id="busuanzi_value_page_pv"></span> times
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
   </span>
   <span id="busuanzi_container_site_pv">
-        <i class="fa fa-eye" aria-hidden="true"></i>Total visits：<span id="busuanzi_value_site_pv"></span> times
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
   </span>
   <span class="post-meta-divider">|</span>
   <span id="busuanzi_container_site_uv" style='display:none'>
-        <i class="fa fa-users" aria-hidden="true"></i>Number of visitors：<span id="busuanzi_value_site_uv"></span> people
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
   </span>
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
@@ -961,7 +992,7 @@
 <script src="/js/clipboard/clipboard.min.js"></script>
 <script>
   !function (e, t, a) {
-    var copy = 'copy';
+    var copy = '复制';
     /* code */
     var initCopyCode = function () {
       var copyHtml = '';
