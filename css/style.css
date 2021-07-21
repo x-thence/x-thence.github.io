@@ -1872,10 +1872,10 @@ pre:hover::-webkit-scrollbar-thumb:hover,
 }
 @media (min-width: 992px) {
   .archive-video {
-    display: none;
+    display: block;
   }
   .archive-header {
-    display: flex;
+    display: none;
   }
 }
 @media (max-width: 992px) {
@@ -2455,10 +2455,10 @@ pre:hover::-webkit-scrollbar-thumb:hover,
 }
 @media (min-width: 992px) {
   .about-video {
-    display: none;
+    display: block;
   }
   .about-header {
-    display: flex;
+    display: none;
   }
 }
 @media (max-width: 992px) {
