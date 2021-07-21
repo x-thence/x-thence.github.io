@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>分类: 前端 | liao</title>
+  <title>标签: Vue | liao</title>
 
   
     
@@ -560,37 +560,37 @@
       
 
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-categoryDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+<div class="bg-light-floor-tagDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
 
-<div class="lazyload category-header" data-original="https://pic3.zhimg.com/80/v2-98dcd81cb0d1fee52a807c13cedb8338_1440w.jpg?source=1940ef5c">
-  <div class="category-header-title">
-    category
+<div class="lazyload tag-header" data-original="https://pic1.zhimg.com/80/v2-604a15cef201cf177943af2d915eb2e7_1440w.jpg?source=1940ef5c">
+  <div class="tag-header-title">
+    tag
   </div>
-  <div class="category-header-desc">
+  <div class="tag-header-desc">
+  
+    <span class="title" id="tag-header-desc"></span>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+        <script>
+        var typed = new Typed("#tag-header-desc", {
+            strings: ['愿你如风，被人温柔以待'],
+            startDelay: 100,
+            typeSpeed: 100,
+            loop: true,
+            backSpeed: 50,
+            showCursor: true
+        });
+        </script>
     
-      <span class="title" id="category-header-desc"></span>
-      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-          <script>
-          var typed = new Typed("#category-header-desc", {
-              strings: ['愿你如风，被人温柔以待'],
-              startDelay: 100,
-              typeSpeed: 100,
-              loop: true,
-              backSpeed: 50,
-              showCursor: true
-          });
-          </script>
-      
   </div>
   <div class="mask-box"></div>
 </div>
 
-<div class="category-video">
+<div class="tag-video">
   <video class="full-video" autoplay loop muted>
       <source style="width: 100%;height: 100vh;" src="/">
   </video>
   <div class="video-header-title">
-    category
+    tag
   </div>
   <div class="video-header-desc">
   
@@ -611,9 +611,9 @@
   <div class="mask-box"></div>
 </div>
 
-<div class="category">
-  <div class="category-name">
-    <div class="name" style="background-color: #FEF9E7;">前端 分类</div>
+<div class="tag">
+  <div class="tag-name">
+    <div class="name" style="background-color: #D5F5E3;">Vue 分类</div>
   </div>
   <section class="posts">
     
@@ -675,125 +675,8 @@
       </div>
     </article>
     
-    <article class="post" data-aos="fade-up"
-      style="">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-07-20</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/07/20/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/">如何比较两个数组的差异</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/JS/">JS</a> <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/JS/%E6%94%BB%E5%9F%8E%E7%8B%AE/">攻城狮</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/07/20/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            
-最近遇到一个需求，需要比较两个数组的差异，数组的每一项都是一个对象，包括数组长度的变更，要求增加和删除都能检测到，将结果用表格的形式展现出来；网上寻找到相关的文章都是过于简单的数组里面是纯数字的情况，在这里并不适用，没办法只好手撸一个函数
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/07/20/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/">
-            <i class="iconfont iconmore" style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/07/20/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-07-16</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/07/16/JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9F%A5%E5%A4%9A%E5%B0%91/">JS数据类型知多少</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/JS/">JS</a> <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/JS/%E6%94%BB%E5%9F%8E%E7%8B%AE/">攻城狮</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/07/16/JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9F%A5%E5%A4%9A%E5%B0%91/" class="lazyload" data-original="/medias/11.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            基本数据类型引用型数据类型示例代码 const a = app()
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/07/16/JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9F%A5%E5%A4%9A%E5%B0%91/">
-            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/07/16/JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9F%A5%E5%A4%9A%E5%B0%91/" class="lazyload" data-original="/medias/11.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
   </section>
 </div>
-
 
     </main>
 
