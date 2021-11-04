@@ -76,29 +76,6 @@
     <!-- 预加载动画 -->
     <!-- 页面预加载动画 -->
 
-<div id='loader'>
-  <link rel="stylesheet" href="/js/loaded/index.css" >
-  <div class="loading-left-bg"></div>
-  <div class="loading-right-bg"></div>
-  <div class="spinner-box">
-    <div class="configure-border-1">
-      <div class="configure-core"></div>
-    </div>
-    <div class="configure-border-2">
-      <div class="configure-core"></div>
-    </div>
-    <div class="loading-word">加载中...</div>
-  </div>
-</div>
-
-<script>
-  var endLoading = function () {
-  document.body.style.overflow = 'auto';
-  document.getElementById('loader').classList.add("loading");
-  }
-  window.addEventListener('load',endLoading);
-</script>
-
     
     <!-- 判断是否为暗黑风格 -->
     <!-- 判断是否为黑夜模式 -->
@@ -624,7 +601,7 @@
       </div>
       <div class="post-content">
         <blockquote>
-<p>最近写移动端的项目时遇到了适配的问题，除了手写rem外，使用第三方工具可以很好的解决，在此做个记录</p>
+<p>最近写移动端的项目时遇到了适配的问题，除了手写rem外，使用第三方工具可以很好的解决，并且能大大提升开发效率，在此做个记录</p>
 </blockquote>
 <h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p>使用 <code>rem</code> 单位进行适配，推荐使用以下两个工具：</p>
 <ul>
@@ -821,15 +798,15 @@
 	<script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
 	<script>
 
-		var requiredFields = '';
+		var requiredFields = 'nick,mail';
   		requiredFields  = requiredFields.split(',');
 
 		var valine = new Valine({
 			el: '#vcomment',
 			notify: false,
 			verify: false,
-			app_id: "",
-			app_key: "",
+			app_id: "UKPvWqzP4KLnqEjenvA53M0r-gzGzoHsz",
+			app_key: "fgKlDLTFgF0SsRyjAwwxjl9P",
 			placeholder: "客官，说点什么吧",
 			avatar: "",
 			master: "",   //博主邮箱md5
