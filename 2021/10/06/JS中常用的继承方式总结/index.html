@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>移动端适配px自动转换成rem | liao</title>
+  <title>JS中常用的继承方式总结 | liao</title>
 
   
     
@@ -546,14 +546,14 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/6.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/7.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="title-box">
     <span class="title">
-      移动端适配px自动转换成rem
+      JS中常用的继承方式总结
     </span>
   </div>
   
@@ -570,61 +570,58 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-07-23</span>
+        <span class="post-time">2021-10-06</span>
       </div>
       
       <div class="post-tags-categories">
         
-        <div class="tags">
-          <i class="iconfont icontag"></i>
-          
-            <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" class="">
-              移动端
-            </a>
-          
-        </div>
-        
-        
-        <div class="categories">
-          <i class="iconfont iconbookmark1"></i>
-          
-            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="">
-              前端
-            </a>
-          
-            <a href="/categories/%E5%89%8D%E7%AB%AF/Vue/" class="">
-              Vue
-            </a>
-          
-        </div>
         
       </div>
       <div class="post-content">
         <blockquote>
-<p>最近写移动端的项目时遇到了适配的问题，除了手写rem外，使用第三方工具可以很好的解决，并且能大大提升开发效率，在此做个记录</p>
+<p>JS继承一直是前端面试中经常遇到问题，那么一起来看下都有哪些继承方式吧</p>
 </blockquote>
-<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p>使用 <code>rem</code> 单位进行适配，推荐使用以下两个工具：</p>
-<ul>
-<li>  <a href="https://github.com/cuth/postcss-pxtorem">postcss-pxtorem</a> 是一款 PostCSS 插件，用于将 px 单位转化为 rem 单位</li>
-<li>  <a href="https://github.com/amfe/lib-flexible">lib-flexible</a> 用于设置 rem 基准值</li>
+<h2 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h2><blockquote>
+<p>将父类的实例作为子类的原型</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.isShow = <span class="literal">true</span></span><br><span class="line">    <span class="built_in">this</span>.info = &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">        <span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent.prototype.getInfo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.isShow, <span class="built_in">this</span>.info)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c1 = <span class="keyword">new</span> Child()</span><br><span class="line"><span class="keyword">const</span> c2 = <span class="keyword">new</span> Child()</span><br><span class="line"></span><br><span class="line">c1.info.name = <span class="string">&#x27;李四&#x27;</span></span><br><span class="line">c1.isShow = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(c1.getInfo()) <span class="comment">// false &#123;name: &#x27;李四&#x27;, age: 19&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(c2.getInfo()) <span class="comment">// true &#123;name: &#x27;李四&#x27;, age: 19&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>简单易于实现</li>
+<li>父类方法可以复用<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3></li>
+<li>父类的所有<code>引用属性</code>会被所有子类共享，更改一个子类的<code>引用属性</code>，其他子类也会受影响</li>
+<li>子类型实例不能给父类型构造函数传参</li>
 </ul>
-<p><code>npm install postcss postcss-pxtorem --save-dev</code></p>
-<p><code>npm i -S amfe-flexible</code></p>
-<h2 id="进行配置"><a href="#进行配置" class="headerlink" title="进行配置"></a>进行配置</h2><ul>
-<li>在根目录下新建<code>postcss.config.js</code>写入如下代码</li>
+<h2 id="借用构造函数继承"><a href="#借用构造函数继承" class="headerlink" title="借用构造函数继承"></a>借用构造函数继承</h2><blockquote>
+<p>在子类构造函数中调用父类构造函数，可以在子类构造函数中使用call()和apply()方法</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">this</span>.isShow = <span class="literal">true</span></span><br><span class="line">	<span class="built_in">this</span>.info = &#123;</span><br><span class="line">		<span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">		<span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent.prototype.getInfo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">this</span>.isShow, <span class="built_in">this</span>.info)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	Parent.call(<span class="built_in">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c1 = <span class="keyword">new</span> Child()</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(c1)) <span class="comment">// &#123;&quot;isShow&quot;:true,&quot;info&quot;:&#123;&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:19&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>创建子类实例时，可以向父类传递参数</li>
+<li>可以实现多继承(call多个父类对象)<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3></li>
+<li>不能继承原型属性/方法，只能继承父类的实例属性和方法</li>
+<li>方法都在构造函数中定义,无法实现复用</li>
+<li>每个子类都有父类实例函数的副本，影响性能</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">plugins</span>: &#123;</span><br><span class="line">     <span class="comment">// postcss-pxtorem 插件的版本需要 &gt;= 5.0.0</span></span><br><span class="line">    <span class="string">&#x27;postcss-pxtorem&#x27;</span>: &#123;</span><br><span class="line">      <span class="attr">rootValue</span>: <span class="number">75</span>, <span class="comment">// 根元素字体大小(1rem的值)，假设设计稿的尺寸为750</span></span><br><span class="line">      <span class="attr">propList</span>: [<span class="string">&#x27;*&#x27;</span>],</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在入口文件引入<code>amfe-flexible</code><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2>我们用vue-cli创建一个项目，取出不需要的文件，在App.vue写入以下代码</li>
+<h2 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h2><blockquote>
+<p>组合<code>原型链继承</code>和<code>借用构造函数继承</code>这两种方法就是组合继承。<br>基本的思路就是使用原型链继承原型上的属性和方法，而通过构造函数继承实例属性，这样既可以把方法定义在原型上以实现重用，又可以让每个实例都有自己的属性</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">this</span>.isShow = <span class="literal">true</span></span><br><span class="line">	<span class="built_in">this</span>.info = &#123;</span><br><span class="line">		<span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">		<span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent.prototype.getInfo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">this</span>.isShow, <span class="built_in">this</span>.info)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 继承父类属性</span></span><br><span class="line">	Parent.call(<span class="built_in">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 继承父类方法</span></span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c1 = <span class="keyword">new</span> Child()</span><br><span class="line">c1.getInfo() <span class="comment">// true &#123;name: &#x27;张三&#x27;, age: 19&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(c1)) <span class="comment">// &#123;&quot;isShow&quot;:true,&quot;info&quot;:&#123;&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:19&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>函数可以复用<h3 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h3></li>
+<li>调用了两次父类，所以产生了两份实例</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>rem移动端适配<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">  <span class="attr">name</span>: <span class="string">&#x27;App&#x27;</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">&#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span></span><br><span class="line"><span class="css"><span class="xml"><span class="selector-class">.box</span> &#123;</span></span></span><br><span class="line"><span class="css"><span class="xml">  <span class="attribute">height</span>: <span class="number">75px</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml">  <span class="attribute">line-height</span>: <span class="number">75px</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml">  <span class="attribute">background</span>: pink;</span></span></span><br><span class="line"><span class="css"><span class="xml">&#125;</span></span></span><br><span class="line"><span class="css"><span class="xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>打开浏览器可以看到，我们系的px样式都被自动转换成了rem，并且切换不同设备时都会自动帮我们设置根字体大小，需要注意的是行内样式是不会被转换的</p>
-<p><img "" class="lazyload placeholder" data-original="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b4b87d4d936c4a1e9246b93acd929d1b~tplv-k3u1fbpfcp-watermark.image" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image.png"></p>
-<p><img "" class="lazyload placeholder" data-original="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8b4f158f138642f3b44e0a8d34a519d3~tplv-k3u1fbpfcp-watermark.image" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image.png"></p>
-<p><code>tips: 如果运行报错提示postCSS8啥的错误，则把postcss-pxtorem的版本降低到5.1.1就好了</code></p>
-<h2 id="适配vant第三方ui框架"><a href="#适配vant第三方ui框架" class="headerlink" title="适配vant第三方ui框架"></a>适配vant第三方ui框架</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">plugins</span>: &#123;</span><br><span class="line">    <span class="comment">// postcss-pxtorem 插件的版本需要 &gt;= 5.0.0</span></span><br><span class="line">    <span class="string">&#x27;postcss-pxtorem&#x27;</span>: &#123;</span><br><span class="line">      <span class="function"><span class="title">rootValue</span>(<span class="params">&#123; file &#125;</span>)</span> &#123;</span><br><span class="line">        <span class="comment">// vant是基于375px来写的</span></span><br><span class="line">        <span class="keyword">return</span> file.indexOf(<span class="string">&#x27;vant&#x27;</span>) !== -<span class="number">1</span> ? <span class="number">37.5</span> : <span class="number">75</span> <span class="comment">//（这里的75根据实际设计稿的尺寸填写）</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">propList</span>: [<span class="string">&#x27;*&#x27;</span>],</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>最后，本文已同步到掘金，移步掘金点点击<a target="_blank" rel="noopener" href="https://juejin.cn/user/8451824563901">这里</a></p>
+<h2 id="原型式继承"><a href="#原型式继承" class="headerlink" title="原型式继承"></a>原型式继承</h2><blockquote>
+<p>利用一个空对象作为中介，将某个对象直接赋值给空对象构造函数的原型。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// copyObj()对传入其中的对象执行了一次浅复制，将构造函数Fn的原型直接指向传入的对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyObj</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">	Fn.prototype = obj</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> Fn()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;wang&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">19</span>,</span><br><span class="line">	<span class="attr">color</span>: [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;pink&#x27;</span>, <span class="string">&#x27;bule&#x27;</span>],</span><br><span class="line">	<span class="attr">sayName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">this</span>.name)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c1 = copyObj(person)</span><br><span class="line">c1.name = <span class="string">&#x27;hahaha&#x27;</span></span><br><span class="line">c1.color.push(<span class="string">&#x27;yellow&#x27;</span>)		</span><br><span class="line">c1.sayName() <span class="comment">// hahaha</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c2 = copyObj(person)</span><br><span class="line">c2.name = <span class="string">&#x27;enenen&#x27;</span></span><br><span class="line">c2.color.push(<span class="string">&#x27;orange&#x27;</span>)</span><br><span class="line">c2.sayName() <span class="comment">// enenen</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(person)) <span class="comment">// &#123;&quot;name&quot;:&quot;wang&quot;,&quot;age&quot;:19,&quot;color&quot;:[&quot;red&quot;,&quot;pink&quot;,&quot;bule&quot;,&quot;yellow&quot;,&quot;orange&quot;]&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="优点-3"><a href="#优点-3" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>父类方法可复用<h3 id="缺点-3"><a href="#缺点-3" class="headerlink" title="缺点"></a>缺点</h3></li>
+<li>父类的引用会被所有子类所共享</li>
+<li>无法传递参数<blockquote>
+<p>另外，ES5中存在Object.create()的方法，能够代替上面的copyObj方法。</p>
+</blockquote>
+</li>
+</ul>
 
       </div>
       
@@ -635,7 +632,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/07/23/移动端适配px自动转换成rem/" target="_blank" title="移动端适配px自动转换成rem">https://github.com/x-thence?tab=repositories/2021/07/23/移动端适配px自动转换成rem/</a>
+    <a href="/2021/10/06/JS中常用的继承方式总结/" target="_blank" title="JS中常用的继承方式总结">https://github.com/x-thence?tab=repositories/2021/10/06/JS中常用的继承方式总结/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -653,39 +650,21 @@
 
 
 
+
+
   
-  <div class="post-nav-prev post-nav-item">
+  <div class="post-nav-next post-nav-item">
     <div class="post-nav-img lazyload" data-original="/medias/12.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
     <a href="/2021/07/27/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="post-nav-link">
       <div class="title">
-        <i class="fa fa-angle-left"></i> 上一篇:
+        下一篇: <i class="fa fa-angle-right"></i>
         <div>函数式编程</div>
       </div>
-      
       <!-- <div class="content">
         高阶函数函数作为参数例如数组中常见的的forEach, filter
 自己手动实现一个forEach函数  12345f
-      </div> -->
-    </a>
-  </div>
-
-
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/13.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/07/21/Vue%E4%B8%ADwatch%E7%9A%84%E5%90%84%E7%A7%8D%E7%94%A8%E6%B3%95/" class="post-nav-link">
-      <div class="title">
-        下一篇: <i class="fa fa-angle-right"></i>
-        <div>Vue中watch的各种用法</div>
-      </div>
-      <!-- <div class="content">
-        Vue2写法先初始化代码，需要监听data中的msg的变化
-123456789101112131415161718192
       </div> -->
     </a>
   </div>
