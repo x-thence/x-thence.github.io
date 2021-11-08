@@ -85,35 +85,6 @@
     </entry>
     
     
-    
-    <entry>
-      <title>JS数据类型知多少</title>
-      <link href="/2021/07/16/JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9F%A5%E5%A4%9A%E5%B0%91/"/>
-      <url>/2021/07/16/JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9F%A5%E5%A4%9A%E5%B0%91/</url>
-      
-        <content type="html"><![CDATA[<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><h3 id="引用型数据类型"><a href="#引用型数据类型" class="headerlink" title="引用型数据类型"></a>引用型数据类型</h3><h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><p><code> const a = app()</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> createStore(&#123;</span><br><span class="line">  <span class="attr">state</span>: &#123;</span><br><span class="line">    <span class="attr">cartInfo</span>: &#123;&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">mutations</span>: &#123;</span><br><span class="line">    <span class="comment">// 添加商品进购物车</span></span><br><span class="line">    addItem (state, params) &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; businessId, item &#125; = params</span><br><span class="line">      <span class="keyword">const</span> businessCartInfo = state.cartInfo[businessId]</span><br><span class="line">      <span class="comment">// 若没有该商家的数据先初始化商家id信息</span></span><br><span class="line">      <span class="keyword">if</span> (!businessCartInfo) &#123;</span><br><span class="line">        state.cartInfo[businessId] = &#123;&#125;</span><br><span class="line">        state.cartInfo[businessId][item.id] = &#123;</span><br><span class="line">          <span class="attr">count</span>: <span class="number">1</span>,</span><br><span class="line">          <span class="attr">price</span>: item.price,</span><br><span class="line">          <span class="attr">imgUrl</span>: item.imgUrl,</span><br><span class="line">          <span class="attr">desc</span>: item.desc</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 若已存在商家数据则判断购物车是否含有该商品的数据，有则+1，没有则进行初始化</span></span><br><span class="line">        <span class="keyword">if</span> (!businessCartInfo[item.id]) &#123;</span><br><span class="line">          businessCartInfo[item.id] = &#123;</span><br><span class="line">            <span class="attr">count</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="attr">price</span>: item.price,</span><br><span class="line">            <span class="attr">imgUrl</span>: item.imgUrl,</span><br><span class="line">            <span class="attr">desc</span>: item.desc</span><br><span class="line">          &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          businessCartInfo[item.id].count += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 从购物车中删除商品</span></span><br><span class="line">    minusItem (state, params) &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; businessId, item &#125; = params</span><br><span class="line">      <span class="keyword">const</span> businessCartInfo = state.cartInfo[businessId]</span><br><span class="line">      <span class="keyword">if</span> (businessCartInfo) &#123;</span><br><span class="line">        <span class="keyword">if</span> (businessCartInfo[item.id]) &#123;</span><br><span class="line">          businessCartInfo[item.id].count -= <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">actions</span>: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">modules</span>: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端 </category>
-          
-          <category> JS </category>
-          
-          <category> 攻城狮 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 前端 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
   
   
 </search>
