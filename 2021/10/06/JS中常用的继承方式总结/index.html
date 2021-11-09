@@ -199,20 +199,20 @@
                   </li>
                   
                   <li>
-                    <a href="/huoban">
+                    <a target="_blank" rel="noopener" href="https://www.bilibili.com/">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>bilibili</span>
                     </a>
                   </li>
                   
                   <li>
-                    <a href="/me">
+                    <a target="_blank" rel="noopener" href="https://juejin.cn/">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>关于我</span>
+                      <span>掘金</span>
                     </a>
                   </li>
                   
@@ -384,20 +384,20 @@
                   </li>
                   
                   <li>
-                    <a href="/huoban">
+                    <a target="_blank" rel="noopener" href="https://www.bilibili.com/">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>bilibili</span>
                     </a>
                   </li>
                   
                   <li>
-                    <a href="/me">
+                    <a target="_blank" rel="noopener" href="https://juejin.cn/">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>关于我</span>
+                      <span>掘金</span>
                     </a>
                   </li>
                   
@@ -576,6 +576,19 @@
       <div class="post-tags-categories">
         
         
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="">
+              前端
+            </a>
+          
+            <a href="/categories/%E5%89%8D%E7%AB%AF/JS/" class="">
+              JS
+            </a>
+          
+        </div>
+        
       </div>
       <div class="post-content">
         <blockquote>
@@ -587,7 +600,9 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.isShow = <span class="literal">true</span></span><br><span class="line">  <span class="built_in">this</span>.info = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent.prototype.getInfo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.isShow, <span class="built_in">this</span>.info)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c1 = <span class="keyword">new</span> Child()</span><br><span class="line"><span class="keyword">const</span> c2 = <span class="keyword">new</span> Child()</span><br><span class="line"></span><br><span class="line">c1.info.name = <span class="string">&#x27;李四&#x27;</span></span><br><span class="line">c1.isShow = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(c1.getInfo()) <span class="comment">// false &#123;name: &#x27;李四&#x27;, age: 19&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(c2.getInfo()) <span class="comment">// true &#123;name: &#x27;李四&#x27;, age: 19&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
 <li>简单易于实现</li>
-<li>父类方法可以复用<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3></li>
+<li>父类方法可以复用</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
 <li>父类的所有<code>引用属性</code>会被所有子类共享，更改一个子类的<code>引用属性</code>，其他子类也会受影响</li>
 <li>子类型实例不能给父类型构造函数传参</li>
 </ul>
@@ -597,7 +612,9 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.isShow = <span class="literal">true</span></span><br><span class="line">  <span class="built_in">this</span>.info = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent.prototype.getInfo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.isShow, <span class="built_in">this</span>.info)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  Parent.call(<span class="built_in">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c1 = <span class="keyword">new</span> Child()</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(c1)) <span class="comment">// &#123;&quot;isShow&quot;:true,&quot;info&quot;:&#123;&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:19&#125;&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ul>
 <li>创建子类实例时，可以向父类传递参数</li>
-<li>可以实现多继承(call多个父类对象)<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3></li>
+<li>可以实现多继承(call多个父类对象)</li>
+</ul>
+<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><ul>
 <li>不能继承原型属性/方法，只能继承父类的实例属性和方法</li>
 <li>方法都在构造函数中定义,无法实现复用</li>
 <li>每个子类都有父类实例函数的副本，影响性能</li>
@@ -607,7 +624,9 @@
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.isShow = <span class="literal">true</span></span><br><span class="line">  <span class="built_in">this</span>.info = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent.prototype.getInfo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.isShow, <span class="built_in">this</span>.info)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 继承父类属性</span></span><br><span class="line">  Parent.call(<span class="built_in">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 继承父类方法</span></span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c1 = <span class="keyword">new</span> Child()</span><br><span class="line">c1.getInfo() <span class="comment">// true &#123;name: &#x27;张三&#x27;, age: 19&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(c1)) <span class="comment">// &#123;&quot;isShow&quot;:true,&quot;info&quot;:&#123;&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:19&#125;&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>函数可以复用<h3 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h3></li>
+<li>函数可以复用</li>
+</ul>
+<h3 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h3><ul>
 <li>调用了两次父类，所以产生了两份实例</li>
 </ul>
 <h2 id="原型式继承"><a href="#原型式继承" class="headerlink" title="原型式继承"></a>原型式继承</h2><blockquote>
@@ -615,7 +634,9 @@
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// copyObj()对传入其中的对象执行了一次浅复制，将构造函数Fn的原型直接指向传入的对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyObj</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  Fn.prototype = obj</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Fn()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;wang&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">19</span>,</span><br><span class="line">  <span class="attr">color</span>: [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;pink&#x27;</span>, <span class="string">&#x27;bule&#x27;</span>],</span><br><span class="line">  <span class="attr">sayName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c1 = copyObj(person)</span><br><span class="line">c1.name = <span class="string">&#x27;hahaha&#x27;</span></span><br><span class="line">c1.color.push(<span class="string">&#x27;yellow&#x27;</span>)		</span><br><span class="line">c1.sayName() <span class="comment">// hahaha</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c2 = copyObj(person)</span><br><span class="line">c2.name = <span class="string">&#x27;enenen&#x27;</span></span><br><span class="line">c2.color.push(<span class="string">&#x27;orange&#x27;</span>)</span><br><span class="line">c2.sayName() <span class="comment">// enenen</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(person)) <span class="comment">// &#123;&quot;name&quot;:&quot;wang&quot;,&quot;age&quot;:19,&quot;color&quot;:[&quot;red&quot;,&quot;pink&quot;,&quot;bule&quot;,&quot;yellow&quot;,&quot;orange&quot;]&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="优点-3"><a href="#优点-3" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>父类方法可复用<h3 id="缺点-3"><a href="#缺点-3" class="headerlink" title="缺点"></a>缺点</h3></li>
+<li>父类方法可复用</li>
+</ul>
+<h3 id="缺点-3"><a href="#缺点-3" class="headerlink" title="缺点"></a>缺点</h3><ul>
 <li>父类的引用会被所有子类所共享</li>
 <li>无法传递参数<blockquote>
 <p>另外，ES5中存在Object.create()的方法，能够代替上面的copyObj方法。</p>
@@ -630,10 +651,11 @@
 <p>ES6中引入了class关键字，class可以通过extends关键字实现继承;<br>需要注意的是，class关键字只是原型的语法糖，JavaScript继承仍然是基于原型实现的</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">name, age</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name</span><br><span class="line">    <span class="built_in">this</span>.age = age</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">showName</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;调用父类的方法&quot;</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name, <span class="built_in">this</span>.age);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span>  Parent(<span class="string">&#x27;tom&#x27;</span>, <span class="number">79</span>)</span><br><span class="line"><span class="built_in">console</span>.log(p1) <span class="comment">// Parent&#123;name: &#x27;tom&#x27;, age: 79&#125;</span></span><br><span class="line"><span class="comment">//定义一个子类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">name, age, salary</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 通过super调用父类的构造方法</span></span><br><span class="line">    <span class="built_in">super</span>(name, age)</span><br><span class="line">    <span class="built_in">this</span>.salary = salary</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 在子类自身定义方法</span></span><br><span class="line">  <span class="function"><span class="title">showName</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;调用子类的方法&quot;</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name, <span class="built_in">this</span>.age, <span class="built_in">this</span>.salary);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> c1 = <span class="keyword">new</span> Child(<span class="string">&#x27;lisa&#x27;</span>, <span class="number">38</span>, <span class="number">100</span>)</span><br><span class="line"><span class="built_in">console</span>.log(c1) <span class="comment">// Child&#123;name: &#x27;lisa&#x27;, age: 38, salary: 100&#125;</span></span><br><span class="line">c1.showName()</span><br></pre></td></tr></table></figure>
-<p>打开控制台可以看到：<br><br><img "" class="lazyload placeholder" data-original="img.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img.png"></p>
 <p>最后说一下这种方式的优缺点</p>
 <h3 id="优点-4"><a href="#优点-4" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>语法简单易懂,操作更方便<h3 id="缺点-4"><a href="#缺点-4" class="headerlink" title="缺点"></a>缺点</h3></li>
+<li>语法简单易懂,操作更方便</li>
+</ul>
+<h3 id="缺点-4"><a href="#缺点-4" class="headerlink" title="缺点"></a>缺点</h3><ul>
 <li>并不是所有的浏览器都支持class关键字</li>
 </ul>
 
@@ -664,6 +686,25 @@
 
 
 
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
+      background-position: center center;">
+    </div>
+    <a href="/2021/11/09/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/" class="post-nav-link">
+      <div class="title">
+        <i class="fa fa-angle-left"></i> 上一篇:
+        <div>JS实现图片飞入特效</div>
+      </div>
+      
+      <!-- <div class="content">
+        
+前言
+前段时间在折腾自己的服务器的时候，无意中翻到了自己以前开始学习JS的时候写过的小案例，不知不觉2020年只剩下不
+      </div> -->
+    </a>
+  </div>
+
 
 
   
@@ -690,89 +731,6 @@
 
     <!-- 打赏 -->
     
-      <div id="appDonate" class="post-donate">
-  <div id="donate_board" class="donate_bar center" ref="donate">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
-  </div>
-  <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-if="visible"
-      @click="cancelDialogDrawer()"
-    >
-    </div>
-  </transition>
-  <transition name="bounce">
-    <div class="donate-box" v-cloak v-if="visible">
-      <div class="donate-box_close">
-        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
-      </div>
-      <div class="donate-box_title">
-        <h4>
-          你的赏识是我前进的动力
-        </h4>
-      </div>
-      <div class="donate-box_tab">
-        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
-          支付宝
-        </div>
-        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
-          微信
-        </div>
-      </div>
-      <div class="donate-box_img">
-        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
-          <img src="/medias/zfb.jpg" alt="支付宝打赏" />
-        </div> 
-        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
-          <img src="/medias/wx.jpg" alt="微信打赏" />
-        </div>
-      </div>
-    </div>
-  </transition>
-</div>
-
-<script>
-  var body = document.body || document.documentElement || window;
-  var vm = new Vue({
-    el: '#appDonate',
-    data: {
-      visible: false,
-      tabActive: 'Alipay',
-      top: 0,
-    },
-    computed: {
-    },
-    mounted() {
-    },
-    methods: {
-      showDialogDrawer() {
-        this.visible = true;
-        // 防止页面滚动，只能让弹框滚动
-        // function getScroll() {
-        //   return {
-        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        //   };
-        // }
-        this.top = $(document).scrollTop() // or getScroll().top
-        // console.log('aa', $('.main-content'));
-        body.style.cssText = 'overflow: hidden;';
-      },
-      cancelDialogDrawer() {
-        this.visible = false;
-        body.removeAttribute('style');
-        $(document).scrollTop(this.top)
-      },
-      changeTabActive(name) {
-        this.tabActive = name;
-      }
-    },
-    created() {}
-  })
-</script>
-    
 
     <!-- 分享 -->
     
@@ -798,6 +756,10 @@
   <div id="myComment">
     
       <!-- 弹幕所需的css和js -->
+
+  <!-- 弹幕插件 -->
+  <link href="/js/danmu/barrager.css" rel="stylesheet">
+  <script src="/js/danmu/jquery.barrager.js"></script>
 
 <!-- 具体js，请前往valine.ejs查看 -->
 
@@ -1515,7 +1477,7 @@
 			}
 		}
 		//查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
-		let themeDanmu = eval('false');
+		let themeDanmu = eval('true');
 		let themeLoop = eval('false');
 		let themeLooperTime = '5000' || 5000;
 		let speed = '20' || 20;
@@ -1942,21 +1904,6 @@
       
     </div>
     <!-- 不蒜子统计 -->
-    
-      
-  <!-- 不蒜子统计 -->
-  <span id="busuanzi_container_site_pv">
-        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
-  </span>
-  <span id="busuanzi_container_site_pv">
-        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
-  </span>
-  <span class="post-meta-divider">|</span>
-  <span id="busuanzi_container_site_uv" style='display:none'>
-        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
-  </span>
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
     
   </div>
 </div>

@@ -199,20 +199,20 @@
                   </li>
                   
                   <li>
-                    <a href="/huoban">
+                    <a target="_blank" rel="noopener" href="https://www.bilibili.com/">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>bilibili</span>
                     </a>
                   </li>
                   
                   <li>
-                    <a href="/me">
+                    <a target="_blank" rel="noopener" href="https://juejin.cn/">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>关于我</span>
+                      <span>掘金</span>
                     </a>
                   </li>
                   
@@ -384,20 +384,20 @@
                   </li>
                   
                   <li>
-                    <a href="/huoban">
+                    <a target="_blank" rel="noopener" href="https://www.bilibili.com/">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>bilibili</span>
                     </a>
                   </li>
                   
                   <li>
-                    <a href="/me">
+                    <a target="_blank" rel="noopener" href="https://juejin.cn/">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>关于我</span>
+                      <span>掘金</span>
                     </a>
                   </li>
                   
@@ -684,89 +684,6 @@
 
     <!-- 打赏 -->
     
-      <div id="appDonate" class="post-donate">
-  <div id="donate_board" class="donate_bar center" ref="donate">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
-  </div>
-  <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-if="visible"
-      @click="cancelDialogDrawer()"
-    >
-    </div>
-  </transition>
-  <transition name="bounce">
-    <div class="donate-box" v-cloak v-if="visible">
-      <div class="donate-box_close">
-        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
-      </div>
-      <div class="donate-box_title">
-        <h4>
-          你的赏识是我前进的动力
-        </h4>
-      </div>
-      <div class="donate-box_tab">
-        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
-          支付宝
-        </div>
-        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
-          微信
-        </div>
-      </div>
-      <div class="donate-box_img">
-        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
-          <img src="/medias/zfb.jpg" alt="支付宝打赏" />
-        </div> 
-        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
-          <img src="/medias/wx.jpg" alt="微信打赏" />
-        </div>
-      </div>
-    </div>
-  </transition>
-</div>
-
-<script>
-  var body = document.body || document.documentElement || window;
-  var vm = new Vue({
-    el: '#appDonate',
-    data: {
-      visible: false,
-      tabActive: 'Alipay',
-      top: 0,
-    },
-    computed: {
-    },
-    mounted() {
-    },
-    methods: {
-      showDialogDrawer() {
-        this.visible = true;
-        // 防止页面滚动，只能让弹框滚动
-        // function getScroll() {
-        //   return {
-        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        //   };
-        // }
-        this.top = $(document).scrollTop() // or getScroll().top
-        // console.log('aa', $('.main-content'));
-        body.style.cssText = 'overflow: hidden;';
-      },
-      cancelDialogDrawer() {
-        this.visible = false;
-        body.removeAttribute('style');
-        $(document).scrollTop(this.top)
-      },
-      changeTabActive(name) {
-        this.tabActive = name;
-      }
-    },
-    created() {}
-  })
-</script>
-    
 
     <!-- 分享 -->
     
@@ -792,6 +709,10 @@
   <div id="myComment">
     
       <!-- 弹幕所需的css和js -->
+
+  <!-- 弹幕插件 -->
+  <link href="/js/danmu/barrager.css" rel="stylesheet">
+  <script src="/js/danmu/jquery.barrager.js"></script>
 
 <!-- 具体js，请前往valine.ejs查看 -->
 
@@ -1509,7 +1430,7 @@
 			}
 		}
 		//查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
-		let themeDanmu = eval('false');
+		let themeDanmu = eval('true');
 		let themeLoop = eval('false');
 		let themeLooperTime = '5000' || 5000;
 		let speed = '20' || 20;
@@ -1936,21 +1857,6 @@
       
     </div>
     <!-- 不蒜子统计 -->
-    
-      
-  <!-- 不蒜子统计 -->
-  <span id="busuanzi_container_site_pv">
-        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
-  </span>
-  <span id="busuanzi_container_site_pv">
-        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
-  </span>
-  <span class="post-meta-divider">|</span>
-  <span id="busuanzi_container_site_uv" style='display:none'>
-        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
-  </span>
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
     
   </div>
 </div>

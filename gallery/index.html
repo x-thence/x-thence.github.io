@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>函数式编程 | liao</title>
+  <title>图库 | liao</title>
 
   
     
@@ -546,14 +546,14 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/12.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://pic2.zhimg.com/80/v2-2cf3b62a87045ee279096449cf6f3ac1_1440w.jpg?source=1940ef5c" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="title-box">
     <span class="title">
-      函数式编程
+      图库
     </span>
   </div>
   
@@ -570,7 +570,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-07-27</span>
+        <span class="post-time">2021-09-10</span>
       </div>
       
       <div class="post-tags-categories">
@@ -578,47 +578,38 @@
         
       </div>
       <div class="post-content">
-        <h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><h3 id="函数作为参数"><a href="#函数作为参数" class="headerlink" title="函数作为参数"></a>函数作为参数</h3><p>例如数组中常见的的forEach, filter</p>
-<h4 id="自己手动实现一个forEach函数"><a href="#自己手动实现一个forEach函数" class="headerlink" title="自己手动实现一个forEach函数"></a>自己手动实现一个forEach函数</h4>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">forEach</span>(<span class="params">array, fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">    fn(array[i])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="函数作为返回值"><a href="#函数作为返回值" class="headerlink" title="函数作为返回值"></a>函数作为返回值</h3><h4 id="封装一个函数令传入的函数只执行一次"><a href="#封装一个函数令传入的函数只执行一次" class="headerlink" title="封装一个函数令传入的函数只执行一次"></a>封装一个函数令传入的函数只执行一次</h4> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 封装</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> done = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!done) &#123;</span><br><span class="line">      done = <span class="literal">true</span></span><br><span class="line">      <span class="keyword">return</span> fn.apply(<span class="built_in">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 传入的函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> bar = foo(say)</span><br><span class="line">bar()</span><br><span class="line">bar()</span><br><span class="line">bar()</span><br><span class="line"><span class="comment">// 上面调用了三次，而实际只执行了一次</span></span><br></pre></td></tr></table></figure>
-<h4 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h4><ul>
-<li>用来抽象通用的问题</li>
-<li>抽象可以帮我们屏蔽细节，只需要关注我们的目标</li>
-<li>无需关注内部实现，使代码更简洁</li>
-</ul>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
-<li>函数内部嵌套函数</li>
-<li>内部函数使用了外部函数的变量或者参数</li>
-<li>最终返回出这个内部函数</li>
-</ul>
-<p>简单来说：可以访问其他函数内部变量的函数就是闭包</p>
-<h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><ul>
-<li>函数在执行的时候会放到执行栈上当函数执行完毕后会从执行栈上移除，但是堆上的作用域成员因为被外部引用不能被释放，因此内部函数依然可以访问外部函数的成员</li>
-</ul>
-<h2 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>相同的输入永远会得到相同的输出，而且没有任何可观察到的副作用</p>
-<h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h3><ul>
-<li>可缓存</li>
-<li>可测试</li>
-<li>并行处理，纯函数不需要访问共享的内存数据，而是依赖参数<h3 id="副作用"><a href="#副作用" class="headerlink" title="副作用"></a>副作用</h3></li>
-<li>当函数依赖于外部状态的时候就无法保证输出相同</li>
-<li>副作用来源<ul>
-<li>配置文件</li>
-<li>数据库</li>
-<li>获取用户的输入</li>
-</ul>
-</li>
-<li>副作用使得函数通用性下降，给程序带来不确定性，尽可能控制它们在可控的范围发生</li>
-</ul>
-<h2 id="柯里化"><a href="#柯里化" class="headerlink" title="柯里化"></a>柯里化</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><ul>
-<li>当一个函数有多个参数的时候先传递一部分参数调用它（这部分参数以后永远不变）</li>
-<li>然后返回一个新的函数接收剩余的参数，返回结果<h3 id="柯里化原理模拟"><a href="#柯里化原理模拟" class="headerlink" title="柯里化原理模拟"></a>柯里化原理模拟</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模拟实现lodash的curry函数</span></span><br><span class="line"><span class="keyword">const</span> myCurry = <span class="function">(<span class="params">func</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">...arg</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arg.length &lt; func.length) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> bar(...arg.concat(<span class="built_in">Array</span>.from(<span class="built_in">arguments</span>)))</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> func(...arg)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> myCurryGetSum = myCurry(getSum)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myCurryGetSum(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 6</span></span><br><span class="line"><span class="built_in">console</span>.log(myCurryGetSum(<span class="number">1</span>)(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 6</span></span><br><span class="line"><span class="built_in">console</span>.log(myCurryGetSum(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>)); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3></li>
-<li>柯里化可以让我们给一个函数传递较少的参数得到一个已经记住了某些参数的新函数</li>
-<li>这是一种对函数参数的缓存</li>
-<li>让函数变得更加灵活，让函数的粒度更小</li>
-<li>可以把多元函数转换成一元函数，可以组合使用函数产生强大的功能</li>
-</ul>
+        <div class="gallery-group-main">
+    
+  <figure class="gallery-group">
+  <img class="gallery-group-img" src='https://pic1.zhimg.com/80/v2-23c3820e8abfb1cef689531af2dc6d09_1440w.jpg?source=1940ef5c' alt="Group Image Gallery">
+  <figcaption>
+  <div class="gallery-group-name">壁纸</div>
+  <p>收藏的一些壁纸</p>
+  <a href='/bizhi'></a>
+  </figcaption>
+  </figure>
+  
+    
+  <figure class="gallery-group">
+  <img class="gallery-group-img" src='https://pic1.zhimg.com/80/v2-8d542d68cbbf0e5f503da9e3f72b8447_1440w.jpg?source=1940ef5c' alt="Group Image Gallery">
+  <figcaption>
+  <div class="gallery-group-name">古典图片</div>
+  <p>中国古典图片</p>
+  <a href='/gudian'></a>
+  </figcaption>
+  </figure>
+  
+    
+  <figure class="gallery-group">
+  <img class="gallery-group-img" src='https://pic1.zhimg.com/80/v2-56164ef0695767475935c9e019c594ae_1440w.jpg?source=1940ef5c' alt="Group Image Gallery">
+  <figcaption>
+  <div class="gallery-group-name">风景</div>
+  <p>风景图片</p>
+  <a href='/fengjing'></a>
+  </figcaption>
+  </figure>
+  
+</div>
 
       </div>
       
@@ -629,7 +620,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/07/27/函数式编程/" target="_blank" title="函数式编程">https://github.com/x-thence?tab=repositories/2021/07/27/函数式编程/</a>
+    <a href="/gallery/index.html" target="_blank" title="图库">https://github.com/x-thence?tab=repositories/gallery/index.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -647,47 +638,7 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/10/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> 上一篇:
-        <div>JS中常用的继承方式总结</div>
-      </div>
-      
-      <!-- <div class="content">
-        
-JS继承一直是前端面试中经常遇到问题，那么一起来看下都有哪些继承方式吧
 
-原型链继承
-将父类的实例作为子类的原型
-
-1
-      </div> -->
-    </a>
-  </div>
-
-
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/07/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8Dpx%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%E6%88%90rem/" class="post-nav-link">
-      <div class="title">
-        下一篇: <i class="fa fa-angle-right"></i>
-        <div>移动端适配px自动转换成rem</div>
-      </div>
-      <!-- <div class="content">
-        
-最近写移动端的项目时遇到了适配的问题，除了手写rem外，使用第三方工具可以很好的解决，并且能大大提升开发效率，在此做个
-      </div> -->
-    </a>
-  </div>
 
 </div>
 
@@ -1617,108 +1568,11 @@ JS继承一直是前端面试中经常遇到问题，那么一起来看下都有
   <!-- 目录 -->
   <!-- 文章详情页右侧目录 -->
 
-  <div class="toc-aside">
-    <div class="toc-main">
-      <div class="toc-aside-title">
-        <i class="fa fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
-        <div class="toc-open-close">本文目录</div>
-      </div>
-      <div class="toc-content">
-        <link href="/js/tocbot/tocbot.css" rel="stylesheet">
-<script src="/js/tocbot/tocbot.min.js"></script>
-<div class="toc"></div>
-
-<script>
-  if ($('.toc').length > 0) {
-    var headerEl = 'h2, h3, h4',  //headers 
-      content = '.post-detail',//文章容器
-      idArr = {};  //标题数组以确定是否增加索引id
-      //add #id
-
-    $(content).children(headerEl).each(function () {
-      //去除空格以及多余标点
-      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
-
-      headerId = headerId.toLowerCase();
-      if (idArr[headerId]) {
-        //id已经存在
-        $(this).attr('id', headerId + '-' + idArr[headerId]);
-        idArr[headerId]++;
-      }
-      else {
-        //id未存在
-        idArr[headerId] = 1;
-        $(this).attr('id', headerId);
-      }
-    });
-
-    tocbot.init({
-      // Where to render the table of contents.
-      tocSelector: '.toc',
-      // Where to grab the headings to build the table of contents.
-      contentSelector: content,
-      // Which headings to grab inside of the contentSelector element.
-      headingSelector: headerEl,
-      scrollSmooth: true,
-      scrollSmoothOffset: -80,
-      headingsOffset: -($(window).height() * 0.4 - 45),
-      positionFixedSelector: '.toc-main',
-      positionFixedClass: 'is-position-fixed',
-      fixedSidebarOffset: 'auto',
-    });
-  }
-
-</script>
-
-<style>
-.is-position-fixed {
-  position:sticky !important;
-  top: 74px;
-}
-.toc-main ul {
-  counter-reset: show-list;
-}
-.toc-main ul li::before {
-  content: counter(item)".";
-  display: block;
-  position: absolute;
-  left: 12px;
-  top:0;
-}
-.toc > .toc-list {
-  padding-left: 35px;
-}
-.toc>.toc-list li {
-  list-style: decimal;
-}
-.toc-list {
-  padding-left: 25px;
-}
-</style>
-      </div>
-    </div>
-  </div>
-
-  
-
   <script>
-    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-    let open = eval('' || 'true');
-    openOrCloseBtn.click(function() {
-      if (open === true) {
-        $(".toc-aside").css({'width': 0, 'padding': 0});
-        $(".toc-content").css({'width': 0});
-        $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-        $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-        open = false;
-      } else {
-        $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
-        $(".toc-content").css({'width': '300px'});
-        $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-        $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-        open = true;
-      }
-    });
+    $(".toc-aside").css({'width': 0, 'padding': 0});
+    $(".toc-content").css({'width': 0});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
   </script>
 
 
