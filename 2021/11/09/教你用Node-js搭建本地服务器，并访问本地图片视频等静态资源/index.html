@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>JS实现图片飞入特效 | liao</title>
+  <title>教你用Node.js搭建本地服务器，并访问本地图片视频等静态资源 | liao</title>
 
   
     
@@ -546,14 +546,14 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/14.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/4.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="title-box">
     <span class="title">
-      JS实现图片飞入特效
+      教你用Node.js搭建本地服务器，并访问本地图片视频等静态资源
     </span>
   </div>
   
@@ -575,70 +575,27 @@
       
       <div class="post-tags-categories">
         
-        
-        <div class="categories">
-          <i class="iconfont iconbookmark1"></i>
+        <div class="tags">
+          <i class="iconfont icontag"></i>
           
-            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="">
-              前端
-            </a>
-          
-            <a href="/categories/%E5%89%8D%E7%AB%AF/JS/" class="">
-              JS
+            <a href="/tags/Node/" class="">
+              Node
             </a>
           
         </div>
         
+        
       </div>
       <div class="post-content">
-        <p><img "" class="lazyload placeholder" data-original="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7e2c35d3325949a4857769130a52b74c~tplv-k3u1fbpfcp-watermark.image" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>前段时间在折腾自己的服务器的时候，无意中翻到了自己以前开始学习JS的时候写过的小案例，不知不觉2020年只剩下不到7天了，回想起当时自学前端的日子真是感受颇多；其中我找到一个用JS实现图片飞入的小案例，觉得挺有意思的，今天拿出来跟大家分享下。</p>
-</blockquote>
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>没错，文章开头的图片就是我们本次的素材了，下面是最终的效果图：<br><img "" class="lazyload placeholder" data-original="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/40148a9140e3497482da2ce22fde6cf7~tplv-k3u1fbpfcp-watermark.image" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<h2 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h2><p>从效果图中可以看出来，最外层是放了一个大盒子，最终的大图会铺满这个大盒子，而整个一张大图是被分割成了许多的小图，将它们打乱顺序，然后在一个一个的推入到大盒子中。<br>这里其实是用了100个”小盒子”，每个小盒子中装了大图的一部分，通过给它们加上背景图片然后设置对应的定位值，最后把这100个小盒子打乱顺序挨个放到大盒子里就能实现上述的效果了。</p>
-<ul>
-<li><p>如何创建”小盒子”</p>
-<p>我们第一步要做的就是先创建出这些”小盒子”,在这里我们可以把整张图片按照10x10来分割，总共100个小盒子，这里我们可以用数组实现：</p>
-</li>
-</ul>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//快速生成一个length为100的数组</span></span><br><span class="line"><span class="keyword">const</span> list = [...new <span class="built_in">Array</span>(<span class="number">100</span>).keys()];</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>如何打乱顺序</p>
-<p>上面<code>list</code>的值是从0~99按顺序来的，现在我们需要将这个数组打乱顺序；数组排序毋庸置疑可以用数组的<code>sort</code>方法，<code>sort</code>方法接收一个回调函数作为参数，回调函数的返回值如果小于0就会对数组升序排序，大于0就会进行降序排序；然后我们这里还要的一个随机的效果，<code>Math.random()</code>刚好能返回一个0到1之间的随机数，再接合上数组的<code>sort</code>方法，用<code>Math.random()</code>减去0.5就能实现对数组的值随机排序了，当然这个随机完全意义上来说是不准确，也可以说是不公平的，因为<code>Math.random()</code>永远也取不到1，不过在这里相对来说已经很随机了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打乱数组的顺序</span></span><br><span class="line">list.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> <span class="built_in">Math</span>.random() - <span class="number">0.5</span>);</span><br></pre></td></tr></table></figure></li>
-<li><p>如何计算每个小盒子的<code>left</code>和<code>top</code>值</p>
-<p>我们先画个草图，如下图所示(偷个懒没写的部分大家自行脑补哈)，100个小盒子的最终排列效果就像这样，可以明显的看出每个小盒子的定位值是不一样的，但是貌似它们又遵循着某种规律，我们怎么获取到每一个小盒子的left和top值呢？</p>
-<p><img "" class="lazyload placeholder" data-original="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b4a71fa7980149bc90bb5ff588bac70e~tplv-k3u1fbpfcp-watermark.image" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<p>由于我们的素材图片是600px x 400px的，我们把它分割成10x10等份，通过计算可以得出，每一个小盒子的<code>width=60px</code>，<code>height=40px</code>。所以从图中可以看出：<br><br>第一个的left值=0<br><br>第二个的left值=60<br><br>第三个的left值=120<br><br>第四个的left值=180<br><br>…以此类推</p>
-<p>而刚好我们这100个盒子是放在数组中，数组的下标从0开始，第一个盒子的索引为0，第二个盒子的索引为1，第三个盒子的索引为2，第四个盒子的索引为3，我们在x轴方向一排只放10个盒子，所以我们得出规律：<code>第几个小盒子的left值=（它的索引 % 10 ）x60</code>，也就是用每一个盒子的索引模上10来取余，再乘以一等份的width就能得到它的left值。<br><br>我们来验证一下：<br><br>第一个的left值 = <code>(0 % 10) * 60 = 0</code><br><br>第二个的left值 = <code>(1 % 10) * 60 = 60</code><br><br>第三个的left值 = <code>(2 % 10) * 60 = 120</code><br><br>第四个的left值 = <code>(3 % 10) * 60 = 180</code><br></p>
-<p>没毛病，跟我们上面完全对的上，就是这么nice，每个盒子的left值已经得到了，现在我们获取top值，既然每个小盒子的left值是由规律的，那么top值是不是也有规律呢？答案是肯定的，我们来找一下。<br><br>通过上面的网格图可以得到:<br><br>第1个的top值=0<br><br>第11个的top值=40<br><br>第21个的top值=80<br><br>第31个的top值=120<br><br>第41个的top值=160<br><br>…</p>
-<p>不难发现，<code>每一个小盒子的top值=Math.floor(它的索引 / 10) x 40</code>,这里我们只需要得到每个小盒子的十位部分，所以不需要小数。接着我们再来验证一下：<br><br>第1个的top值  = <code>Math.floor(0 / 10) * 40 = 0</code><br><br>第11个的top值 = <code>Math.floor(10 / 10) * 40 = 40</code><br><br>第21个的top值 = <code>Math.floor(20 / 10) * 40 = 80</code><br><br>第31个的top值 = <code>Math.floor(30 / 10) * 40 = 120</code><br><br>第41个的top值 = <code>Math.floor(40 / 10) * 40 = 160</code><br></p>
-<p>同样没毛病，也完全对的上，一样的nice，到这里我们就已经得到了每一个小盒子的left和top值。</p>
-</li>
-<li><p>如何计算每个小盒子背景图片的left和top值</p>
-<p>现在我们还需要给每一个小盒子加上露娜的背景图片并设置好对应的<code>background-position</code>，经过上面的分析到这里不难看出，每个小盒子的<code>background-position</code>跟它们的<code>left值</code>和<code>top值</code>是相反的，下面我们还需要准备一点东西。</p>
-</li>
-<li><p>如何实现飞入特效</p>
-<p>这里我们需要引用一个JS动画库，叫做<code>anime.js</code>,大家可以去github搜一下就能找到了；<a target="_blank" rel="noopener" href="https://www.animejs.cn/documentation/">点击这里</a>可以查看它的文档，了解相关用法。我们这里就是传入了一些配置，将我们上面计算到的定位值传入进去，最终来实现飞入的动画效果，下面就可以开始撸代码了。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>我们先创建最外层的容器(class为wrapper的div)并初始化样式，并且提前给里面的每个小盒子(class为box的div)设置好相应的样式</p>
-</li>
-<li><p>html部分</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>css部分</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">50px</span> auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>js部分<br>我们先获取最外层容器然后生成一个值为0-99的数组并打乱顺序，同时要知道我们每一张小盒子飞入容器中都是一次函数执行，所以我们需要一个索引值来记录当前飞入的是第几个小盒子</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取容器盒子</span></span><br><span class="line"><span class="keyword">const</span> wrapper = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.wrapper&#x27;</span>);</span><br><span class="line"><span class="comment">//快速生成一个值为0-99、length为100的数组</span></span><br><span class="line"><span class="keyword">const</span> list = [...new <span class="built_in">Array</span>(<span class="number">100</span>).keys()];</span><br><span class="line"><span class="comment">//打乱数组的顺序</span></span><br><span class="line">list.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> <span class="built_in">Math</span>.random() - <span class="number">0.5</span>);</span><br><span class="line"><span class="comment">//初始化索引值</span></span><br><span class="line"><span class="keyword">let</span> index = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<p>然后我们需要定义一个函数，每一次执行这个函数就往容器中飞入一个小盒子，我们的<code>index就+1</code>，当index到达99的时候，说明就是最后一个小盒子，本次函数执行结束后下一次就不需要执行了，所以我们每一次执行函数我们先进行判断，如果index === 100，那么我们就终止函数执行<br></p>
-</li>
-</ul>
-<p>然后我们挨个从数组中取出一个小盒子，结合上面的分析，获取到它的left值和top值，然后我们创建一个div给它设置好相应的样式然后append到容器中就好了，最后再由<code>anime</code>来生成飞入的动画,来看看具体代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fly</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//index=100时直接return</span></span><br><span class="line">  <span class="keyword">if</span> (index === <span class="number">100</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="comment">//取出当前小盒子的位置，取完后index需要自增1</span></span><br><span class="line">  <span class="keyword">let</span> currentVal = list[index++];</span><br><span class="line">  <span class="comment">//获取当前盒子的left和top值</span></span><br><span class="line">  <span class="keyword">const</span> left = currentVal % <span class="number">10</span> * <span class="number">60</span>;</span><br><span class="line">  <span class="keyword">const</span> top = <span class="built_in">Math</span>.floor(currentVal / <span class="number">10</span>) * <span class="number">40</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//生成一个盒子</span></span><br><span class="line">  <span class="keyword">const</span> box = <span class="built_in">document</span>.createElement(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line">  <span class="comment">//加上我们前面定义的类名</span></span><br><span class="line">  box.classList.add(<span class="string">&#x27;box&#x27;</span>);</span><br><span class="line">  <span class="comment">//设置背景图片的定位值和其他属性，这里./timg.jpg就是我们的素材图片</span></span><br><span class="line">  box.style.cssText = <span class="string">`background:url(&#x27;./timg.jpg&#x27;) <span class="subst">$&#123;-left&#125;</span>px <span class="subst">$&#123;-top&#125;</span>px no-repeat;</span></span><br><span class="line"><span class="string">                       background-size: 600px 400px;`</span>;</span><br><span class="line">  <span class="comment">//插入到容器中</span></span><br><span class="line">  wrapper.appendChild(box);</span><br><span class="line">  <span class="comment">//生成飞入动画，需要注意在此之前我们需要先引入anime.js</span></span><br><span class="line">  <span class="keyword">let</span> animation = anime(&#123;</span><br><span class="line">    <span class="attr">targets</span>: box, <span class="comment">//目标元素，这里指当前飞入的小盒子</span></span><br><span class="line">    <span class="attr">left</span>: left + <span class="string">&#x27;px&#x27;</span>, <span class="comment">//每一个小盒子的left值</span></span><br><span class="line">    <span class="attr">top</span>: top + <span class="string">&#x27;px&#x27;</span>, <span class="comment">//每一个小盒子的top值</span></span><br><span class="line">    <span class="attr">duration</span>: <span class="number">80</span>, <span class="comment">//每一个小盒子飞入的执行时间，单位是毫秒</span></span><br><span class="line">    <span class="attr">easing</span>: <span class="string">&#x27;linear&#x27;</span>, <span class="comment">//这里可以设置很多不一样的参数来控制动画如何执行</span></span><br><span class="line">    <span class="comment">//执行完当前动画后的延迟回调，因为我们需要执行100次，所以进行递归调用</span></span><br><span class="line">    <span class="attr">complete</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      fly();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><em>最后我们直接在外层调用<code>fly()</code>就可以了，到这里代码实现差不多就结束了，打开浏览器可以看到跟效果图一样的飞入动画了，其实这个案例分析明白想透彻了还是比较简单的，可能我上面有些地方描述的不是特别好，还望大家多多指教，喜欢的朋友可以点个赞支持一下哈，感谢各位大佬。</em><br></p>
-<ul>
-<li>下面附上完整代码，需要的小伙伴可以参考下：</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">  &lt;title&gt;图片飞入&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    .wrapper &#123;</span><br><span class="line">      position: relative;</span><br><span class="line">      width: 600px;</span><br><span class="line">      height: 400px;</span><br><span class="line">      border: 1px solid #ccc;</span><br><span class="line">      margin: 50px auto;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .wrapper .box &#123;</span><br><span class="line">      position: absolute;</span><br><span class="line">      width: 60px;</span><br><span class="line">      height: 40px;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;script src=&quot;./anime.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;wrapper&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    //获取容器盒子</span><br><span class="line">    const wrapper = document.querySelector(&#x27;.wrapper&#x27;);</span><br><span class="line">    //快速生成一个length为100的数组</span><br><span class="line">    const list = [...new Array(100).keys()];</span><br><span class="line">    //打乱数组的顺序</span><br><span class="line">    list.sort((a, b) =&gt; Math.random() - 0.5);</span><br><span class="line">    //初始化索引值</span><br><span class="line">    let index = 0;</span><br><span class="line"></span><br><span class="line">    function fly() &#123;</span><br><span class="line">      //index=100时直接return</span><br><span class="line">      if (index === 100) return;</span><br><span class="line">      //取出当前小盒子的位置，取完后index需要自增1</span><br><span class="line">      let currentVal = list[index++];</span><br><span class="line">      //获取当前盒子的left和top值</span><br><span class="line">      const left = currentVal % 10 * 60;</span><br><span class="line">      const top = Math.floor(currentVal / 10) * 40</span><br><span class="line"></span><br><span class="line">      //生成一个盒子</span><br><span class="line">      const box = document.createElement(&#x27;div&#x27;);</span><br><span class="line">      //加上我们前面定义的类名</span><br><span class="line">      box.classList.add(&#x27;box&#x27;);</span><br><span class="line">      //设置背景图片的定位值和其他属性，这里./timg.jpg就是我们的素材图片</span><br><span class="line">      box.style.cssText = `background:url(&#x27;./timg.jpg&#x27;) $&#123;-left&#125;px $&#123;-top&#125;px no-repeat;</span><br><span class="line">                       background-size: 600px 400px;`;</span><br><span class="line">      //插入到容器中</span><br><span class="line">      wrapper.appendChild(box);</span><br><span class="line">      //生成飞入动画，需要注意在此之前我们需要先引入anime.js</span><br><span class="line">      let animation = anime(&#123;</span><br><span class="line">        targets: box, //目标元素，这里指当前飞入的小盒子</span><br><span class="line">        left: left + &#x27;px&#x27;, //每一个小盒子的left值</span><br><span class="line">        top: top + &#x27;px&#x27;, //每一个小盒子的top值</span><br><span class="line">        duration: 80, //每一个小盒子飞入的执行时间，单位是毫秒</span><br><span class="line">        easing: &#x27;linear&#x27;, //这里可以设置很多不一样的参数来控制动画如何执行</span><br><span class="line">        //执行完当前动画后的延迟回调，因为我们需要执行100次，所以进行递归调用</span><br><span class="line">        complete: function () &#123;</span><br><span class="line">          fly();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //开始执行</span><br><span class="line">    fly();</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+        <p>废话不多说，先用express搭建一个本地服务</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> app = express()</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>)=&gt;</span>&#123;</span><br><span class="line">    res.send(<span class="string">&#x27;Hello world&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">8083</span>, <span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;Server is running at http://localhost:8083&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>然后在命令行输入node app启动服务</p>
+<p>这个时候我们打开浏览器访问<a href="http://localhost:8083就能看到hello">http://localhost:8083就能看到hello</a> world了，表示请求成功了如图<br><img "" class="lazyload" data-original="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/3/4/170a45c5521f699e~tplv-t2oaga2asx-image.image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>如果我们要访问图片，得先建一个public文件夹把资源放在里面，加上这几行代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/img&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    res.sendFile(path.join(__dirname, <span class="string">&#x27;public/2.png&#x27;</span>));</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这个时候我们在浏览器输入<a target="_blank" rel="noopener" href="http://localhost:8083/img%E5%B0%B1%E8%83%BD%E8%AE%BF%E9%97%AE%E5%88%B0%E5%9B%BE%E7%89%87%E4%BA%86">http://localhost:8083/img就能访问到图片了</a><br><img "" class="lazyload" data-original="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/3/4/170a45c5554e83a3~tplv-t2oaga2asx-image.image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>视频的话也是同样的道理，我们再加上这几行代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/air&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    res.sendFile(path.join(__dirname, <span class="string">&#x27;public/lenveo.mp4&#x27;</span>));</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>同样的我们用浏览器打开<a target="_blank" rel="noopener" href="http://localhost:8083/air%E5%B0%B1%E8%83%BD%E8%AE%BF%E9%97%AE%E5%88%B0%E8%A7%86%E9%A2%91%E4%BA%86">http://localhost:8083/air就能访问到视频了</a><br><img "" class="lazyload" data-original="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/3/4/170a45c556c3894d~tplv-t2oaga2asx-image.image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>另外txt和pdf文件都是可以访问的，完整代码已上传至码云，需要的请点击<br><a target="_blank" rel="noopener" href="https://gitee.com/liaoxiang123/local-server-node">完整代码</a><br>看到这里如果对你有帮助的话帮忙点个赞吧。</p>
+
       </div>
       
         <div class="copyright">
@@ -648,7 +605,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/11/09/JS实现图片飞入特效/" target="_blank" title="JS实现图片飞入特效">https://github.com/x-thence?tab=repositories/2021/11/09/JS实现图片飞入特效/</a>
+    <a href="/2021/11/09/教你用Node-js搭建本地服务器，并访问本地图片视频等静态资源/" target="_blank" title="教你用Node.js搭建本地服务器，并访问本地图片视频等静态资源">https://github.com/x-thence?tab=repositories/2021/11/09/教你用Node-js搭建本地服务器，并访问本地图片视频等静态资源/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -666,44 +623,22 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/4.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/11/09/%E6%95%99%E4%BD%A0%E7%94%A8Node-js%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B6%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E7%AD%89%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> 上一篇:
-        <div>教你用Node.js搭建本地服务器，并访问本地图片视频等静态资源</div>
-      </div>
-      
-      <!-- <div class="content">
-        废话不多说，先用express搭建一个本地服务
-1234567891011var express = require(&
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/10/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="post-nav-link">
+    <a href="/2021/11/09/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fa fa-angle-right"></i>
-        <div>JS中常用的继承方式总结</div>
+        <div>JS实现图片飞入特效</div>
       </div>
       <!-- <div class="content">
         
-JS继承一直是前端面试中经常遇到问题，那么一起来看下都有哪些继承方式吧
-
-原型链继承
-将父类的实例作为子类的原型
-
-1
+前言
+前段时间在折腾自己的服务器的时候，无意中翻到了自己以前开始学习JS的时候写过的小案例，不知不觉2020年只剩下不
       </div> -->
     </a>
   </div>
