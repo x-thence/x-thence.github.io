@@ -25,7 +25,7 @@
 
   
     <script>
-        var themeModelId = '';
+        var themeModelId = '0';
         if (themeModelId) {
             localStorage.setItem('modelId', themeModelId);
         }
@@ -545,7 +545,7 @@
 
 
 
-<div class="swiper-length" style="display: none;">1</div>
+<div class="swiper-length" style="display: none;">0</div>
 <div id="appSwiper"
   class="swiper-no-swiping"
   @mouseenter="stopAutoPlay()" 
@@ -553,104 +553,44 @@
 >
   <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
     
-      
-        <swiper-slide>
-          <div class="item swiper-lazy" data-background="https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png" style="background-size: 90000px; 
-            background-position: left center;" style="position: relative;">
-            <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
-              <div class="flag">
-                
-                <div class="swiper-video">
-                  <video class="full-video" poster="https://img14.360buyimg.com/ddimg/jfs/t1/150557/6/19578/249564/60320406Ed5c42418/0d18299f505e4268.gif" autoplay loop muted style="width: 100%;height:100%;object-fit: cover;">
-                    <source style="width: 100%;height: 100vh;"  src="https://yuang01.github.io/video/gf3.mp4">
-                  </video>
-                  <div class="swiper-video-maskBox"></div>
-                </div>
-                
-                <div class="img-mask swiper-lazy swiper-default-bgImg" data-background="https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png" style="height: 100%; background-size: cover; 
-                  background-position: center center;">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>   
-                </div>
-                <div class="flag-text">
-                  <div class="flag-text-content">
-                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">青墨书晚风</div>
-                    
-                      <div class="ani animated default-excerpt" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">
-                        <vue-typed-js :strings="defaultDesc" :loop="defaultDescTypedLoop" typeSpeed="10000">
-                          <h1 class="typing"></h1>
-                        </vue-typed-js>
-                      </div>
-                      
-                  </div>
-                  <div style="display: flex;" class="flag-text-btns">
-                    
-                      <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://yuang01.github.io/" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;">阅读文档</a></div>
-                    
-                    
-                  </div>
-                </div>
+      <swiper-slide>
+        <div class="item swiper-lazy" data-background="https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png" style="background-size: 90000px; 
+          background-position: left center;" style="position: relative;">
+          <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
+            <div class="flag">
+              
+              <div class="swiper-video">
+                <video class="full-video" poster="https://img14.360buyimg.com/ddimg/jfs/t1/150557/6/19578/249564/60320406Ed5c42418/0d18299f505e4268.gif" autoplay loop muted style="width: 100%;height:100%;object-fit: cover;">
+                  <source style="width: 100%;height: 100vh;" src="https://yuang01.github.io/video/gf3.mp4">
+                </video>
+                <div class="swiper-video-maskBox"></div>
               </div>
-            </div>
-        </swiper-slide>
-      
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-          
-          <swiper-slide>
-            <div class="item swiper-lazy" data-background="/medias/13.jpg" style=" background-size: 90000px; 
-            background-position: left center;" style="position: relative;">
-            <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
-              <div class="flag" style="z-index: 2;">
-                <div class="img-mask swiper-lazy" data-background="/medias/13.jpg" style="height: 100%; background-size: cover; 
-                  background-position: center center;">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
-                </div>
-                <div class="flag-text">
-                  <div class="flag-text-content">
-                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">
-                      <a href="/2021/07/21/Vue%E4%B8%ADwatch%E7%9A%84%E5%90%84%E7%A7%8D%E7%94%A8%E6%B3%95/">
-                        Vue中watch的各种用法
-                      </a>
+              
+              <div class="img-mask swiper-lazy swiper-default-bgImg" data-background="https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png" style="height: 100%; background-size: cover; 
+                background-position: center center;">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>   
+              </div>
+              <div class="flag-text">
+                <div class="flag-text-content">
+                  <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">青墨书晚风</div>
+                  
+                    <div class="ani animated default-excerpt" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">
+                      <vue-typed-js :strings="defaultDesc" :loop="defaultDescTypedLoop" :typeSpeed="1000">
+                        <h1 class="typing"></h1>
+                      </vue-typed-js>
                     </div>
-                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">Vue2写法先初始化代码，需要监听data中的msg的变化
-12345678910111213141516171819202122232425&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;</div>
-                  </div>
-                  <div class="bottom-one-btn ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2021/07/21/Vue%E4%B8%ADwatch%E7%9A%84%E5%90%84%E7%A7%8D%E7%94%A8%E6%B3%95/" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
+                    
+                </div>
+                <div style="display: flex;" class="flag-text-btns">
+                  
+                    <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://x-thence.github.io/archives/" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;">阅读文章</a></div>
+                  
+                  
                 </div>
               </div>
             </div>
-
-          </swiper-slide>
-        
-      
-        
-        
-      
-    <div class="swiper-pagination" slot="pagination" style="display: none;"></div>
-    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style="display: none;"></div>
-    <div class="swiper-button-next swiper-button-white" slot="button-next" style="display: none;"></div>
+          </div>
+      </swiper-slide>
     
   </swiper>
   
@@ -1278,7 +1218,7 @@
         :data="listData"
         :class-option="classOption"
         class="warp"
-        style="height: 60px"
+        style="height: 90px"
       >
         <ul class="index-notice-content__ul">
           
@@ -1316,6 +1256,23 @@
                 
               
             </li>
+          
+            <li>
+              
+                <div class="index-notice-content__title">
+                  
+                    <span title="#同步掘金个人文章至本博客 ~" style="color:blue">
+                      #同步掘金个人文章至本博客 ~
+                    </span>
+                  
+                </div>
+                
+                  <div class="index-notice-content__date" style="color:blue">
+                    2021-11-11
+                  </div>
+                
+              
+            </li>
            
         </ul>
       </vue-seamless-scroll>
@@ -1330,7 +1287,7 @@
 <script>
   let seamless = JSON.parse('false');
   seamless = seamless ? 0 : 30;
-  let listData = '[object Object],[object Object]' || [];
+  let listData = '[object Object],[object Object],[object Object]' || [];
   listData = listData.split(',');
   var vm = new Vue({
     el: '#appIndexNotice',
@@ -1365,6 +1322,25 @@
 	<div class="articles">
 		
 			
+				<div class="article-link">
+					
+					<div class="article lazyload" data-original="/medias/8.jpg" style="background-size: cover; 
+						background-position: center center;">
+					</div>
+					<div class="text">
+						<div class="text-main">
+							<div class="title"><a href="/2021/11/15/%E6%B5%85%E8%B0%88%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">浅谈前端安全常见问题</a></div>
+							<div class="content">
+								
+近年来，随着互联网的高速发展，信息安全问题已经成为企业最为关注的焦点之一，而前端又是引发企业安全问题的高危据点，并且成
+							</div>
+						</div>
+						<a href="/2021/11/15/%E6%B5%85%E8%B0%88%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="more">
+							<i class="fa fa-eye" aria-hidden="true"></i>阅读更多
+						</a>
+					</div>
+				</div>
+			
 		
 			
 		
@@ -1380,7 +1356,7 @@
 					</div>
 					<div class="text">
 						<div class="text-main">
-							<div class="title"><a href="/2021/10/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">JS中常用的继承方式总结</a></div>
+							<div class="title"><a href="/2021/09/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">JS中常用的继承方式总结</a></div>
 							<div class="content">
 								
 JS继承一直是前端面试中经常遇到问题，那么一起来看下都有哪些继承方式吧
@@ -1391,7 +1367,7 @@ JS继承一直是前端面试中经常遇到问题，那么一起来看下都有
 1
 							</div>
 						</div>
-						<a href="/2021/10/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="more">
+						<a href="/2021/09/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="more">
 							<i class="fa fa-eye" aria-hidden="true"></i>阅读更多
 						</a>
 					</div>
@@ -1405,22 +1381,27 @@ JS继承一直是前端面试中经常遇到问题，那么一起来看下都有
 			
 				<div class="article-link">
 					
-					<div class="article lazyload" data-original="/medias/13.jpg" style="background-size: cover; 
+					<div class="article lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
 						background-position: center center;">
 					</div>
 					<div class="text">
 						<div class="text-main">
-							<div class="title"><a href="/2021/07/21/Vue%E4%B8%ADwatch%E7%9A%84%E5%90%84%E7%A7%8D%E7%94%A8%E6%B3%95/">Vue中watch的各种用法</a></div>
+							<div class="title"><a href="/2021/07/29/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/">JS实现图片飞入特效</a></div>
 							<div class="content">
-								Vue2写法先初始化代码，需要监听data中的msg的变化
-123456789101112131415161718192
+								
+前言
+前段时间在折腾自己的服务器的时候，无意中翻到了自己以前开始学习JS的时候写过的小案例，不知不觉2020年只剩下不
 							</div>
 						</div>
-						<a href="/2021/07/21/Vue%E4%B8%ADwatch%E7%9A%84%E5%90%84%E7%A7%8D%E7%94%A8%E6%B3%95/" class="more">
+						<a href="/2021/07/29/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/" class="more">
 							<i class="fa fa-eye" aria-hidden="true"></i>阅读更多
 						</a>
 					</div>
 				</div>
+			
+		
+			
+		
 			
 		
 			
@@ -1499,10 +1480,125 @@ XSS（Cross Sit
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-11-10</span>
+            <span class="post-time">2021-10-08</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2021/11/10/TypeScript%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/">TypeScript语法进阶笔记</a>
+            <a class="post-title-link" href="/2021/10/08/%E4%BD%BF%E7%94%A8TypeScript%E5%88%B6%E4%BD%9C%E7%88%AC%E8%99%AB%E5%B0%8F%E6%A1%88%E4%BE%8B/">使用TypeScript制作爬虫小案例</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Node/">Node</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              
+              <a href="/2021/10/08/%E4%BD%BF%E7%94%A8TypeScript%E5%88%B6%E4%BD%9C%E7%88%AC%E8%99%AB%E5%B0%8F%E6%A1%88%E4%BE%8B/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            前言
+最近接触到typescript，学习了一些基础的知识，刚好又是周末有时间，想着能不能用ts来做点什么东西。看到别的小伙伴有用它来写爬虫的，刚好自己也对这块比较感兴趣，就也试着写了一个简单的爬虫，今天跟大家分享下。
+
+前期准备写爬虫之前
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/10/08/%E4%BD%BF%E7%94%A8TypeScript%E5%88%B6%E4%BD%9C%E7%88%AC%E8%99%AB%E5%B0%8F%E6%A1%88%E4%BE%8B/">
+            <i class="iconfont iconmore" style="  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2021/10/08/%E4%BD%BF%E7%94%A8TypeScript%E5%88%B6%E4%BD%9C%E7%88%AC%E8%99%AB%E5%B0%8F%E6%A1%88%E4%BE%8B/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2021-09-18</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2021/09/18/%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/">原生JS实现图片懒加载</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/JS/">JS</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              
+              <a href="/2021/09/18/%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/" class="lazyload" data-original="/medias/15.jpg" style="background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            
+图片懒加载是一种网页性能优化的方式，它能极大的提高用户体验。同时在面试的时候也经常容易被面试官问到其实现和原理，很早之前就接触过，由于最近几个月都没有写文章了，想着借此机会顺便复习一下
+
+为什么需要懒加载？在一些图片比较多的网站（比如说大
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/09/18/%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/">
+            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2021/09/18/%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/" class="lazyload" data-original="/medias/15.jpg" style="background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2021-09-10</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2021/09/10/TypeScript%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/">TypeScript语法进阶笔记</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
@@ -1526,7 +1622,7 @@ XSS（Cross Sit
           <div class="post-img-mobile">
             
               
-              <a href="/2021/11/10/TypeScript%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/" class="lazyload" data-original="/medias/3.jpg" style="background-size: cover; 
+              <a href="/2021/09/10/TypeScript%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/" class="lazyload" data-original="/medias/3.jpg" style="background-size: cover; 
                 background-position: center center;">
               </a>
             
@@ -1537,14 +1633,14 @@ XSS（Cross Sit
           </div>
         </div>
         <div class="post-more">
-          <a href="/2021/11/10/TypeScript%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/">
+          <a href="/2021/09/10/TypeScript%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/">
             <i class="iconfont iconmore" style="  " title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2021/11/10/TypeScript%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/" class="lazyload" data-original="/medias/3.jpg" style="background-size: cover; 
+          <a href="/2021/09/10/TypeScript%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/" class="lazyload" data-original="/medias/3.jpg" style="background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -1556,62 +1652,10 @@ XSS（Cross Sit
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-11-09</span>
+            <span class="post-time">2021-09-06</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2021/11/09/%E6%95%99%E4%BD%A0%E7%94%A8Node-js%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B6%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E7%AD%89%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/">教你用Node.js搭建本地服务器，并访问本地图片视频等静态资源</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/" rel="tag">Node</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/11/09/%E6%95%99%E4%BD%A0%E7%94%A8Node-js%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B6%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E7%AD%89%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/" class="lazyload" data-original="/medias/4.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            废话不多说，先用express搭建一个本地服务
-1234567891011var express = require(&#x27;express&#x27;)var path = require(&#x27;path&#x27;)var a
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/11/09/%E6%95%99%E4%BD%A0%E7%94%A8Node-js%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B6%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E7%AD%89%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/">
-            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/11/09/%E6%95%99%E4%BD%A0%E7%94%A8Node-js%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B6%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E7%AD%89%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/" class="lazyload" data-original="/medias/4.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-  
-    <article class="post" data-aos="fade-up" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-11-09</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/11/09/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/">JS实现图片飞入特效</a>
+            <a class="post-title-link" href="/2021/09/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">JS中常用的继承方式总结</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
@@ -1632,62 +1676,7 @@ XSS（Cross Sit
           <div class="post-img-mobile">
             
               
-              <a href="/2021/11/09/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            
-前言
-前段时间在折腾自己的服务器的时候，无意中翻到了自己以前开始学习JS的时候写过的小案例，不知不觉2020年只剩下不到7天了，回想起当时自学前端的日子真是感受颇多；其中我找到一个用JS实现图片飞入的小案例，觉得挺有意思的，今天拿出来跟大
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/11/09/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/">
-            <i class="iconfont iconmore" style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/11/09/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-  
-    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-10-06</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/10/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">JS中常用的继承方式总结</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/JS/">JS</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/10/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
+              <a href="/2021/09/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
                 background-position: center center;">
               </a>
             
@@ -1703,14 +1692,14 @@ JS继承一直是前端面试中经常遇到问题，那么一起来看下都有
           </div>
         </div>
         <div class="post-more">
-          <a href="/2021/10/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">
+          <a href="/2021/09/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">
             <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2021/10/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
+          <a href="/2021/09/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -1722,59 +1711,10 @@ JS继承一直是前端面试中经常遇到问题，那么一起来看下都有
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-07-27</span>
+            <span class="post-time">2021-08-13</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2021/07/27/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">函数式编程</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/07/27/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="lazyload" data-original="/medias/12.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            高阶函数函数作为参数例如数组中常见的的forEach, filter
-自己手动实现一个forEach函数  12345function forEach(array, fn) &#123;  for(let i = 0; i &lt; arr
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/07/27/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
-            <i class="iconfont iconmore" style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/07/27/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="lazyload" data-original="/medias/12.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-  
-    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-07-23</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/07/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8Dpx%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%E6%88%90rem/">移动端适配px自动转换成rem</a>
+            <a class="post-title-link" href="/2021/08/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8Dpx%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%E6%88%90rem/">移动端适配px自动转换成rem</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
@@ -1798,7 +1738,7 @@ JS继承一直是前端面试中经常遇到问题，那么一起来看下都有
           <div class="post-img-mobile">
             
               
-              <a href="/2021/07/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8Dpx%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%E6%88%90rem/" class="lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
+              <a href="/2021/08/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8Dpx%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%E6%88%90rem/" class="lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
                 background-position: center center;">
               </a>
             
@@ -1813,14 +1753,183 @@ JS继承一直是前端面试中经常遇到问题，那么一起来看下都有
           </div>
         </div>
         <div class="post-more">
-          <a href="/2021/07/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8Dpx%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%E6%88%90rem/">
+          <a href="/2021/08/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8Dpx%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%E6%88%90rem/">
+            <i class="iconfont iconmore" style="  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2021/08/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8Dpx%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%E6%88%90rem/" class="lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2021-08-08</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2021/08/08/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/">如何比较两个数组的差异</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/JS/">JS</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              
+              <a href="/2021/08/08/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            
+最近遇到一个需求，需要比较两个数组的差异，数组的每一项都是一个对象，包括数组长度的变更，要求增加和删除都能检测到，将结果用表格的形式展现出来；网上寻找到相关的文章都是过于简单的数组里面是纯数字的情况，在这里并不适用，没办法只好手撸一个函数
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/08/08/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/">
             <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2021/07/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8Dpx%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%E6%88%90rem/" class="lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
+          <a href="/2021/08/08/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2021-07-29</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2021/07/29/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/">JS实现图片飞入特效</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/JS/">JS</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              
+              <a href="/2021/07/29/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            
+前言
+前段时间在折腾自己的服务器的时候，无意中翻到了自己以前开始学习JS的时候写过的小案例，不知不觉2020年只剩下不到7天了，回想起当时自学前端的日子真是感受颇多；其中我找到一个用JS实现图片飞入的小案例，觉得挺有意思的，今天拿出来跟大
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/07/29/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/">
+            <i class="iconfont iconmore" style="  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2021/07/29/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%A3%9E%E5%85%A5%E7%89%B9%E6%95%88/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2021-07-25</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2021/07/25/%E6%95%99%E4%BD%A0%E7%94%A8Node-js%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B6%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E7%AD%89%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/">教你用Node.js搭建本地服务器，并访问本地图片视频等静态资源</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/" rel="tag">Node</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Node/">Node</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              
+              <a href="/2021/07/25/%E6%95%99%E4%BD%A0%E7%94%A8Node-js%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B6%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E7%AD%89%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/" class="lazyload" data-original="/medias/4.jpg" style="background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            废话不多说，先用express搭建一个本地服务
+1234567891011var express = require(&#x27;express&#x27;)var path = require(&#x27;path&#x27;)var a
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/07/25/%E6%95%99%E4%BD%A0%E7%94%A8Node-js%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B6%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E7%AD%89%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/">
+            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2021/07/25/%E6%95%99%E4%BD%A0%E7%94%A8Node-js%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B6%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E7%AD%89%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/" class="lazyload" data-original="/medias/4.jpg" style="background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -1884,65 +1993,24 @@ JS继承一直是前端面试中经常遇到问题，那么一起来看下都有
       </div>
     </article>
   
-    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-07-20</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/07/20/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/">如何比较两个数组的差异</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/JS/">JS</a> <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/JS/%E6%94%BB%E5%9F%8E%E7%8B%AE/">攻城狮</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/07/20/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            
-最近遇到一个需求，需要比较两个数组的差异，数组的每一项都是一个对象，包括数组长度的变更，要求增加和删除都能检测到，将结果用表格的形式展现出来；网上寻找到相关的文章都是过于简单的数组里面是纯数字的情况，在这里并不适用，没办法只好手撸一个函数
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/07/20/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/">
-            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/07/20/%E5%A6%82%E4%BD%95%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%BC%82/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-  
 </section>
 <!-- 翻页 -->
+
+  <!-- <nav class="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+  </nav> -->
+  <div class="page-nav">
+    
+    <div class="page-info">
+        <div class="page-info-text">1 / 2</div>
+    </div>
+    
+      <a href="/page/2/"
+         class="page-nav-next">
+          <span class="mr-5">下一页</span><i class="fa fa-angle-right"></i>
+      </a>
+      
+  </div>
 
 
 <!-- 花瓣和雪花飘落 -->
@@ -2197,8 +2265,8 @@ JS继承一直是前端面试中经常遇到问题，那么一起来看下都有
 
         function doSomething() {
           that.$notify({
-            title: "成功",
-            content: "代码已复制",
+            title: "SUCCESS",
+            content: "已复制",
             type: 'success'
           })
           // console.log('ctrl + c 监听成功');  

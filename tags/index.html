@@ -25,7 +25,7 @@
 
   
     <script>
-        var themeModelId = '';
+        var themeModelId = '0';
         if (themeModelId) {
             localStorage.setItem('modelId', themeModelId);
         }
@@ -642,6 +642,14 @@
                     </span>
                 </a>
                 
+                
+                <a href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫: 1">
+                    <span class="tag-content"
+                        title="爬虫" style="background-color: #D7BDE2;">爬虫
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
@@ -887,8 +895,8 @@
 
         function doSomething() {
           that.$notify({
-            title: "成功",
-            content: "代码已复制",
+            title: "SUCCESS",
+            content: "已复制",
             type: 'success'
           })
           // console.log('ctrl + c 监听成功');  

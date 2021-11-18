@@ -25,7 +25,7 @@
 
   
     <script>
-        var themeModelId = '';
+        var themeModelId = '0';
         if (themeModelId) {
             localStorage.setItem('modelId', themeModelId);
         }
@@ -570,7 +570,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-07-27</span>
+        <span class="post-time">2021-07-20</span>
       </div>
       
       <div class="post-tags-categories">
@@ -629,7 +629,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/07/27/函数式编程/" target="_blank" title="函数式编程">https://github.com/x-thence?tab=repositories/2021/07/27/函数式编程/</a>
+    <a href="/2021/07/20/函数式编程/" target="_blank" title="函数式编程">https://github.com/x-thence?tab=repositories/2021/07/20/函数式编程/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -649,45 +649,23 @@
 
   
   <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/13.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/10/06/JS%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="post-nav-link">
+    <a href="/2021/07/21/Vue%E4%B8%ADwatch%E7%9A%84%E5%90%84%E7%A7%8D%E7%94%A8%E6%B3%95/" class="post-nav-link">
       <div class="title">
         <i class="fa fa-angle-left"></i> 上一篇:
-        <div>JS中常用的继承方式总结</div>
+        <div>Vue中watch的各种用法</div>
       </div>
       
       <!-- <div class="content">
-        
-JS继承一直是前端面试中经常遇到问题，那么一起来看下都有哪些继承方式吧
-
-原型链继承
-将父类的实例作为子类的原型
-
-1
+        Vue2写法先初始化代码，需要监听data中的msg的变化
+123456789101112131415161718192
       </div> -->
     </a>
   </div>
 
 
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/07/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8Dpx%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%E6%88%90rem/" class="post-nav-link">
-      <div class="title">
-        下一篇: <i class="fa fa-angle-right"></i>
-        <div>移动端适配px自动转换成rem</div>
-      </div>
-      <!-- <div class="content">
-        
-最近写移动端的项目时遇到了适配的问题，除了手写rem外，使用第三方工具可以很好的解决，并且能大大提升开发效率，在此做个
-      </div> -->
-    </a>
-  </div>
 
 </div>
 
@@ -2093,8 +2071,8 @@ JS继承一直是前端面试中经常遇到问题，那么一起来看下都有
 
         function doSomething() {
           that.$notify({
-            title: "成功",
-            content: "代码已复制",
+            title: "SUCCESS",
+            content: "已复制",
             type: 'success'
           })
           // console.log('ctrl + c 监听成功');  

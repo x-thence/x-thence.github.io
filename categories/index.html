@@ -25,7 +25,7 @@
 
   
     <script>
-        var themeModelId = '';
+        var themeModelId = '0';
         if (themeModelId) {
             localStorage.setItem('modelId', themeModelId);
         }
@@ -596,18 +596,18 @@
             <div class="category-chips">
                 
                 
-                <a href="/categories/%E5%89%8D%E7%AB%AF/" title="前端: 5">
+                <a href="/categories/%E5%89%8D%E7%AB%AF/" title="前端: 6">
                     <span class="category-content"
                         title="前端" style="background-color: #FEF9E7;">前端
-                        <span class="category-length">5</span>
+                        <span class="category-length">6</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E5%89%8D%E7%AB%AF/JS/" title="JS: 3">
+                <a href="/categories/%E5%89%8D%E7%AB%AF/JS/" title="JS: 4">
                     <span class="category-content"
                         title="JS" style="background-color: #F9E79F;">JS
-                        <span class="category-length">3</span>
+                        <span class="category-length">4</span>
                     </span>
                 </a>
                 
@@ -615,14 +615,6 @@
                 <a href="/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/" title="框架: 1">
                     <span class="category-content"
                         title="框架" style="background-color: #E8F8F5;">框架
-                        <span class="category-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/%E5%89%8D%E7%AB%AF/JS/%E6%94%BB%E5%9F%8E%E7%8B%AE/" title="攻城狮: 1">
-                    <span class="category-content"
-                        title="攻城狮" style="background-color: #D5F5E3;">攻城狮
                         <span class="category-length">1</span>
                     </span>
                 </a>
@@ -648,6 +640,14 @@
                     <span class="category-content"
                         title="浏览器" style="background-color: #D5F5E3;">浏览器
                         <span class="category-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Node/" title="Node: 2">
+                    <span class="category-content"
+                        title="Node" style="background-color: #85C1E9;">Node
+                        <span class="category-length">2</span>
                     </span>
                 </a>
                 
@@ -896,8 +896,8 @@
 
         function doSomething() {
           that.$notify({
-            title: "成功",
-            content: "代码已复制",
+            title: "SUCCESS",
+            content: "已复制",
             type: 'success'
           })
           // console.log('ctrl + c 监听成功');  
