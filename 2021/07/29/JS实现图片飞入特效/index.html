@@ -593,7 +593,7 @@
       <div class="post-content">
         <p><img "" class="lazyload placeholder" data-original="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7e2c35d3325949a4857769130a52b74c~tplv-k3u1fbpfcp-watermark.image" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>前段时间在折腾自己的服务器的时候，无意中翻到了自己以前开始学习JS的时候写过的小案例，不知不觉2020年只剩下不到7天了，回想起当时自学前端的日子真是感受颇多；其中我找到一个用JS实现图片飞入的小案例，觉得挺有意思的，今天拿出来跟大家分享下。</p>
+<p>前段时间在折腾自己的服务器的时候，无意中翻到了自己以前开始学习JS的时候写过的小案例，回想起当时自学前端的日子真是感受颇多；其中我找到一个用JS实现图片飞入的小案例，觉得挺有意思的，今天拿出来跟大家分享下。</p>
 </blockquote>
 <h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>没错，文章开头的图片就是我们本次的素材了，下面是最终的效果图：<br><img "" class="lazyload placeholder" data-original="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/40148a9140e3497482da2ce22fde6cf7~tplv-k3u1fbpfcp-watermark.image" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
 <h2 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h2><p>从效果图中可以看出来，最外层是放了一个大盒子，最终的大图会铺满这个大盒子，而整个一张大图是被分割成了许多的小图，将它们打乱顺序，然后在一个一个的推入到大盒子中。<br>这里其实是用了100个”小盒子”，每个小盒子中装了大图的一部分，通过给它们加上背景图片然后设置对应的定位值，最后把这100个小盒子打乱顺序挨个放到大盒子里就能实现上述的效果了。</p>
